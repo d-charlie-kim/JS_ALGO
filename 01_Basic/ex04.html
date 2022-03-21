@@ -5,15 +5,13 @@
     </head>
     <body>
         <script>
-            function solution( ){
-                
-
+            function solution(num){
+                let sum = 0;
+                for (let i = 1; i <= num; i++)
+                    sum += i;
+                return (sum);
             }
-
-			/* 
-				--testCasePart--
-				console.log(solution());
-			*/ 
+			console.log(solution(10));
         </script>
     </body>
 </html>
