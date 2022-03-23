@@ -5,15 +5,21 @@
     </head>
     <body>
         <script>
-            function solution( ){
-                
-
+            function solution(s){
+                let answer = "";
+                let flag = 0;
+                for (let i = 0; i < s.length; i++) {
+                    flag = 0;
+                    for (let j = i; j >= 0; j--) {
+                        if (j != i && s[j] == s[i])
+                            flag = 1;
+                    }
+                    if (flag == 0)
+                        answer += s[i];
+                }
+                return (answer);
             }
-
-			/* 
-				--testCasePart--
-				console.log(solution());
-			*/ 
+            console.log(solution("helloworld"));
         </script>
     </body>
 </html>

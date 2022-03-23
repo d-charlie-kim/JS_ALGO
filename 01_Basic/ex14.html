@@ -5,15 +5,29 @@
     </head>
     <body>
         <script>
-            function solution( ){
-                
-
+            function solution(s){
+                let len = 0;
+                let answer = "";
+                for (let x of s) {
+                    if (x.length > len) {
+                        len = x.length;
+                        answer = x;
+                    }
+                }
+                return (answer);
             }
-
-			/* 
-				--testCasePart--
-				console.log(solution());
-			*/ 
+            let str=["teacher", "time", "student", "beautiful", "good"];
+            console.log(solution(str));
         </script>
     </body>
 </html>
+
+<!-- 
+    1. for of
+        배열의 요소 접근
+        
+    2. for in
+        배열의 인덱스 접근
+        객체의 프로퍼티 접근
+
+ -->

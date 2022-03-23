@@ -5,15 +5,19 @@
     </head>
     <body>
         <script>
-            function solution( ){
-                
-
+            function solution(s){
+                let length = s.length;
+                let answer = "";
+                if (length % 2 == 0) {
+                    answer += s[length / 2 - 1];
+                    answer += s[(length / 2)];
+                }
+                else {
+                    answer += s[Math.ceil(length / 2) - 1];
+                }
+                return (answer);
             }
-
-			/* 
-				--testCasePart--
-				console.log(solution());
-			*/ 
+            console.log(solution("study"));
         </script>
     </body>
 </html>
