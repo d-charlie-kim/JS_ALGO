@@ -1,26 +1,26 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(arr){
-                let temp = [];
-                let ret = [];
-                let sum = 0;
-                for (let i = 0; i < arr.length; i++)
-                    if (arr[i] % 2 == 1)
-                    {
-                        sum += arr[i];
-                        temp.push(arr[i]);
-                    }
-                ret.push(sum);
-                ret.push(Math.min(...temp));
-                return (ret);
-            }
-            let arr=[12, 77, 38, 41, 53, 92, 85];
-            console.log(solution(arr));
-        </script>
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(arr){
+				let temp = [];
+				let ret = [];
+				let sum = 0;
+				for (let i = 0; i < arr.length; i++)
+					if (arr[i] % 2 == 1)
+					{
+						sum += arr[i];
+						temp.push(arr[i]);
+					}
+				ret.push(sum);
+				ret.push(Math.min(...temp));
+				return (ret);
+			}
+			let arr=[12, 77, 38, 41, 53, 92, 85];
+			console.log(solution(arr));
+		</script>
+	</body>
 </html>

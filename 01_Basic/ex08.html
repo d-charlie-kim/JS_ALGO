@@ -1,28 +1,28 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(answer){
-                let sum = 0;
-                let arr = answer;
-                arr.forEach(el => sum += el);
-                for (let i = 0; i < arr.length; i++) {
-                    for (let j = i + 1; j < arr.length; j++) {
-                        if (sum - arr[i] - arr[j] == 100) {
-                            arr.splice(j, 1);
-                            arr.splice(i, 1);
-                            return (arr);
-                        }
-                    }
-                }
-            }
-            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
-            console.log(solution(arr));
-        </script>
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(answer){
+				let sum = 0;
+				let arr = answer;
+				arr.forEach(el => sum += el);
+				for (let i = 0; i < arr.length; i++) {
+					for (let j = i + 1; j < arr.length; j++) {
+						if (sum - arr[i] - arr[j] == 100) {
+							arr.splice(j, 1);
+							arr.splice(i, 1);
+							return (arr);
+						}
+					}
+				}
+			}
+			let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+			console.log(solution(arr));
+		</script>
+	</body>
 </html>
 
 <!-- ##reduce 메소드## -->
@@ -30,19 +30,19 @@
 <!-- 10번째 줄 answer로 arr을 초기화 해주지 않고, answer를 바로 리턴한다면, 출력이 다르게 나온다 왜? -->
 
 <!-- 
-    ###배열에서 특정 값 삭제하는 여러가지 방법!###
+	###배열에서 특정 값 삭제하는 여러가지 방법!###
 
-    1. splice()함수를 사용하여 JavaScript 배열에서 특정 요소 제거
-    2. Array.filter()를 사용하여 JavaScript 배열에서 특정 요소 제거
-    3. Underscore.js라이브러리를 사용하여 JavaScript 배열에서 특정 요소 제거
-    4. Lodash라이브러리를 사용하여 JavaScript 배열에서 특정 요소 제거
+	1. splice()함수를 사용하여 JavaScript 배열에서 특정 요소 제거
+	2. Array.filter()를 사용하여 JavaScript 배열에서 특정 요소 제거
+	3. Underscore.js라이브러리를 사용하여 JavaScript 배열에서 특정 요소 제거
+	4. Lodash라이브러리를 사용하여 JavaScript 배열에서 특정 요소 제거
 
-    https://www.delftstack.com/ko/howto/javascript/javascript-remove-index-from-an-array/
+	https://www.delftstack.com/ko/howto/javascript/javascript-remove-index-from-an-array/
 -->
 
 <!--
 
-    ###화살표 함수###
+	###화살표 함수###
 
 // 이 문장은 배열을 반환함: [8, 6, 7, 9]
 elements.map(function(element) {

@@ -1,20 +1,20 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(day, arr){
-                let count = 0;
-                for (let i = 0; i < arr.length; i++) {
-                    if ((arr[i] % 10) == day)
-                        count++;
-                }
-                return (count);
-            }
-            arr=[25, 23, 13, 43, 53, 13, 33];
-            console.log(solution(3, arr));
-        </script>
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(day, arr){
+				let count = 0;
+				for (let i = 0; i < arr.length; i++) {
+					if ((arr[i] % 10) == day)
+						count++;
+				}
+				return (count);
+			}
+			arr=[25, 23, 13, 43, 53, 13, 33];
+			console.log(solution(3, arr));
+		</script>
+	</body>
 </html>
