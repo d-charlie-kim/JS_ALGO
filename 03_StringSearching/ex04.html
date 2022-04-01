@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(s, t){
+				let answer = [];
+				let left = 0, right = 0;
+				for (let i = 0; i < s.length; i++) {
+					if (s[i] == t) {
+						answer.push('0');
+					} else {
+						left = 0;
+						right = 0;
+						for (let j = i; j >= 0; j--) {
+							if (s[j] == t)
+								break ;
+							left++;
+						}
+						for (let j = i; j < s.length; j++) {
+							if (s[j] == t)
+								break ;
+							right++;
+						}
+						answer.push(Math.min(left, right));
+					}
+				}
+				return (answer);
+			}
+			
+			let str="teachermode";
+			console.log(solution(str, 'e'));
+		</script>
+	</body>
+</html>
+
+<!-- 
+
+	답지답
+	index = 0 부터 시작해서
+	오른쪽 방향으로 가장 가까운 t를 찾아서 배열을 만들고
+
+	index = s.length 부터 시작해서
+	왼쪽 방향으로 가장 가까운 t를 찾아서
+	현재 배열과 대소 비교 후 작은 것으로 대체
+
+	이렇게 두바퀴 반복한다.
+
+ -->

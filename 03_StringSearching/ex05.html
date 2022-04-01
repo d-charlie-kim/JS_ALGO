@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(s){
+				let answer = "";
+				for (let i = 0; i < s.length; i++) {
+					answer += s[i];
+					for (let j = i; j < s.length; j++) {
+						if (s[i] != s[j]) {
+							if (j != i + 1)
+								answer += (j - i);
+							i = j - 1;
+							break ;
+						}
+					}
+				}
+				return (answer);
+			}
+
+			let str="KKHSSSSSSSE";
+			console.log(solution(str));
+		</script>
+	</body>
+</html>
+
+<!-- 
+
+// for 반복문을 하나만 사용한 예시 답안
+// 훨 깔끔하다.
+
+			function solution(s){
+				let answer="";
+				let cnt=1;
+				s=s+" ";
+				for(let i=0; i<s.length-1; i++){
+					if(s[i]===s[i+1]) cnt++;
+					else{
+						answer+=s[i];
+						if(cnt>1) answer+=String(cnt);
+						cnt=1;
+					}
+				}
+				return answer;
+			}
+
+ -->
+
+
+ <!-- 
+
+	### 숫자를 문자열로 형변환 ###
+
+	1. String(value)
+	2. value.toString()
+
+		차이점은 무엇일까
+		==> 똑같다는 것 같은데, value = null 일때
+			1번은 에러가 나지 않지만, 2번은 에러가 난다.
+		* 좀 더 알아볼 것 
+
+  -->

@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(str){
+				str = str.replace(/[^0-9]/g, '');
+				for (let i = 0; str[i] == '0';) {
+					str = str.replace('0', '');
+				}
+				return (str);
+			}
+			
+			let str="g0en2T   0s8eSoft";
+			console.log(solution(str));
+		</script>
+	</body>
+</html>
+
+<!-- 
+
+	### 문자가 숫자인지 판별하기 ###
+	
+	단순하게 isNaN() 함수를 사용할 수도 있지만 
+	사용시 주의해야할 부분이 있다.
+
+	isNaN 함수는 Not a Number 라는 함수로
+	num 이면 false
+	num 이 아니면 true 를 리턴한다.
+
+	하지만
+	isNaN("");
+	isNaN(" ");
+	isNaN(null);
+	이 경우도 false를 리턴하기 떄문에 주의해야한다.
+
+ -->

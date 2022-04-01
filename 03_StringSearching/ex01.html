@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>	
+		<script>
+			function solution(s){
+				s = s.toUpperCase();
+				let end = s.length - 1;
+				for (let i = 0; i < s.length; i++) {
+					if (s[i] != s[end])
+						return ("NO");
+					end--;
+				}
+				return ("YES");
+			}
+
+			let str="goeoEoG";
+			console.log(solution(str));
+		</script>
+	</body>
+</html>
+
+<!-- 
+		### 배열을 거꾸로 뒤집는 방법 ###
+
+		1. for 반복문 이용
+		2. reverse() 함수 이용
+			arr.reverse() 하면 arr의 배열 순서가 바뀐다.
+			* 원본이 바뀌기 때문에 원본은 살리고 싶다면 복사를 해서 사용해야한다.
+		
+ -->
