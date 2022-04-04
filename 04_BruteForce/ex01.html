@@ -1,9 +1,25 @@
-let answer = [];
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(n, arr){
+				let max = -1, answer = -1, temp = 0;
+				for (let i = 0; i < n; i++) {
+					temp = 0;
+					for (let x = arr[i]; x > 0; x = parseInt(x / 10))
+						temp += parseInt(x % 10);
+					max = Math.max(temp, max);
+					if (temp == max)
+						answer = arr[i];
+				}
+				return (answer);
+			}
 
-for (x in s) {
-	let temp = 0;
-	for (;x > 0; x = x / 10)
-		temp += parseInt(x % 10);
-	answer.push(temp);
-}
-return (Math.max(...answer));
+			let arr=[128, 460, 603, 40, 521, 137, 123];
+			console.log(solution(7, arr));
+		</script>
+	</body>
+</html>
