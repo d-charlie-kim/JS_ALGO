@@ -1,0 +1,9 @@
+let answer = [];
+
+for (x in s) {
+	let temp = 0;
+	for (;x > 0; x = x / 10)
+		temp += parseInt(x % 10);
+	answer.push(temp);
+}
+return (Math.max(...answer));
