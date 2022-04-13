@@ -13,8 +13,24 @@
 	</head>
 	<body>
 		<script>
+			function isPrime(num) {
+				if (num == 1)
+					return (false);
+				for (let i = 2; i * 2 < num; i++)  {
+					if (parseInt(num % i) == 0)
+						return (false);
+				}
+				return (true);
+			}
 			function solution(arr){
-				
+				let answer = [];
+				let temp = 0;
+				for (x of arr) {
+					temp = parseInt(x.toString().split("").reverse().join(""));
+					if (isPrime(temp))
+						answer.push(temp);
+				}
+				return (answer);
 			}
 
 			let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
@@ -22,3 +38,12 @@
 		</script>
 	</body>
 </html>
+
+
+<!-- 
+
+	### 제곱근 구하는 메소드 ###
+	Math.sqrt(num);
+
+
+ -->

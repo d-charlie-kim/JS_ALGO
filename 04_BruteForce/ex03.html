@@ -6,10 +6,27 @@ a<html>
 	<body>
 		<script>
 			function solution(test){
-
+				let answer = 0;
+				let smallCheck = 1, bigCheck = 1;
+				for (let i = 0; i < test[0].length - 1; i++) {
+					for (let j = i + 1; j < test[0].length; j++) {
+						for (arr of test) {
+							if (arr[i] > arr[j])
+								bigCheck = 0;
+							else
+								smallCheck = 0;
+						}
+						if (bigCheck || smallCheck) {
+							answer++;
+						}
+						bigCheck = 1;
+						smallCheck = 1;
+					}
+				}
+				return (answer);
 			}
 
-			let arr=[[3, 4, 1, 2], [4, 3, 2, 1], [3, 1, 4, 2]];
+			let arr=[[3, 4, 1, 2], [4, 3, 2, 1], [3, 1, 4, 2], [3, 4, 1, 2]];
 			console.log(solution(arr));
 		</script>
 	</body>
