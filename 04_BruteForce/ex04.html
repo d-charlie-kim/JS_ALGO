@@ -1,3 +1,11 @@
+<!-- 
+	배송비 + 상품 가격 이 가장 저렴한 순으로 정렬
+	하나씩 반값 할인해서 사고
+	배열 앞에서 부터 사기 시작함
+	예산 초과하면 끝.
+	max 비교해서 answer에 추가 후 리턴.
+ -->
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -5,8 +13,25 @@
 	</head>
 	<body>
 		<script>
-			function solution(m, product){
+			function sortByMin(price) {
 				
+			}
+			function solution(m, product){
+				let sortedProduct = [];
+				let answer = 0, cnt = 0, priceSum = 0;
+				sortedProduct = sortByMin(product);
+				for (let i = 0; i < product.length; i++) {
+					cnt = 0;
+					priceSum = product[i][1];
+					priceSum += parseInt(product[i][0] / 2);
+					for (let j = 0; priceSum <= m; j++) {
+						if (i != j)
+							priceSum = priceSum + product[j][0] + product[j][1];
+						cnt++;
+					}
+					answer = Math.max(cnt - 1, answer);
+				}
+				return (answer);
 			}
 
 			let arr=[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
